@@ -1,38 +1,216 @@
-.App {
-  text-align: center;
+/* body {
+  font-family: 'Josefin Sans';
+  background-color: #FFFAFB;
+} */
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.right-arrow,
+.left-arrow {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -35px;
+  right: 80px;
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.right-arrow {
+  right: 160px;
+}
+
+.right-arrow:hover,
+.left-arrow:hover {
+  transform: scale(1.3, 1.3);
+}
+
+.react-horizontal-scrolling-menu--wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail-image {
+  width: 620px;
+  height: 620px;
+}
+
+.hero-banner-img {
+  position: absolute;
+  right: 40px;
+  top: 0px;
+  width: 700px;
+  height: 900px;
+  margin-top: -330px;
+
+}
+
+.exercise-card {
+  background: #fff;
+  border-bottom-left-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  width: 370px;
+  height: 585px;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 15px;
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+@media (min-width:1280px) {
+  .exercise-card {
+    height: 513px;
   }
 }
+.exercise-card img {
+  object-fit: cover;
+  height: 326px;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bodyPart-card {
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+
+.exercise-card:hover,
+.bodyPart-card:hover {
+  transform: scale(1.1, 1.1);
+}
+/* 
+.search-btn:hover {
+  color: #FF2625 !important;
+  border: 1px solid #FF2625 !important;
+} */
+
+.exercise-video {
   display: flex;
   flex-direction: column;
+  gap: 24px;
+  text-decoration: none;
+}
+
+@media screen and (max-width:1200px) {
+  .detail-image {
+    width: 300px;
+    height: 300px;
+  }
+
+
+  /* .react-horizontal-scrolling-menu--scroll-container {
+    width: 500px;
+  } */
+
+  .left-arrow,
+  .right-arrow {
+    position: static !important;
+  }
+
+  .hero-banner-img {
+    display: none;
+  }
+
+
+
+}
+
+
+/*Componente Boton*/
+.boton{
+  padding: 15px;
+  display: inline-block;
+  margin: 0.75rem 0;
+  /* transition: background-color 0.5s; */
+}
+/* .boton:hover{
+  background-color: #eb3f3f !important;
+
+} */
+
+/*Estilos para el modo Dark el checkbox*/
+.switch-checkbox{
+  margin: 25px 0 0 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch  > input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #161B22;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.slider > img{
+  width: 15px;
+  height: 15px;
+  object-fit: cover;
 }
 
-.App-link {
-  color: #61dafb;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input:checked + .slider {
+  background-color: #161B22;
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  
+}
+
+.MuiPagination-root * {
+  color: inherit !important;
+}
+ .MuiPagination-root * > .Mui-selected {
+  color: white !important;
+} 
+
+/* La home */
+
+.text-rayado{
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px black;
+  font-weight: 700;
+}
+.dark .text-rayado{
+  -webkit-text-stroke: 0.015em white;
 }

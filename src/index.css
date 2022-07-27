@@ -1,13 +1,325 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  /* font-family: 'Inter', sans-serif; */
+  font-size: 16px;
+  background-color: #FFFAFB;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  @apply text-black
+}
+/* ======================== Layouts ======================== */
+.container{
+  @apply px-3 xl:px-3 m-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] 2xl:max-w-[1320px]
+}
+.row{
+  @apply grid grid-cols-12 gap-3
+}
+.col-1, {
+  @apply col-span-1 
+}
+.col-2, {
+  @apply col-span-2 
+}
+.col-3, {
+  @apply col-span-3 
+}
+.col-4, {
+  @apply col-span-4 
+}
+.col-5, {
+  @apply col-span-5 
+}
+.col-6, {
+  @apply col-span-6 
+}
+.col-7 {
+  @apply col-span-7 
+}
+.col-8 {
+  @apply col-span-8 
+}
+.col-9 {
+  @apply col-span-9 
+}
+.col-10, {
+  @apply col-span-10 
+}
+.col-11 {
+  @apply col-span-11 
+}
+.col-12, {
+  @apply col-span-12 
+}
+
+.col-sm-1{
+  @apply sm:col-span-1
+}
+.col-sm-2{
+  @apply sm:col-span-2
+}
+.col-sm-3{
+  @apply sm:col-span-3
+}
+.col-sm-4{
+  @apply sm:col-span-4
+}
+.col-sm-5{
+  @apply sm:col-span-5
+}
+.col-sm-6{
+  @apply sm:col-span-6
+}
+.col-sm-7{
+  @apply sm:col-span-7
+}
+.col-sm-8{
+  @apply sm:col-span-8
+}
+.col-sm-9{
+  @apply sm:col-span-9
+}
+.col-sm-10{
+  @apply sm:col-span-10
+}
+.col-sm-11{
+  @apply sm:col-span-11
+}
+.col-sm-12{
+  @apply sm:col-span-12
+}
+
+
+.col-md-1 {
+  @apply md:col-span-1 
+}
+.col-md-2 {
+  @apply md:col-span-2 
+}
+.col-md-3 {
+  @apply md:col-span-3 
+}
+.col-md-4 {
+  @apply md:col-span-4 
+}
+.col-md-5 {
+  @apply md:col-span-5 
+}
+.col-md-6 {
+  @apply md:col-span-6 
+}
+.col-md-7 {
+  @apply md:col-span-7 
+}
+.col-md-8 {
+  @apply md:col-span-8 
+}
+.col-md-9 {
+  @apply md:col-span-9 
+}
+.col-md-10 {
+  @apply md:col-span-10 
+}
+.col-md-11 {
+  @apply md:col-span-11 
+}
+.col-md-12 {
+  @apply md:col-span-12 
+}
+
+
+.col-lg-1{
+  @apply lg:col-span-1
+}
+.col-lg-2{
+  @apply lg:col-span-2
+}
+.col-lg-3{
+  @apply lg:col-span-3
+}
+.col-lg-4{
+  @apply lg:col-span-4
+}
+.col-lg-5{
+  @apply lg:col-span-5
+}
+.col-lg-6{
+  @apply lg:col-span-6
+}
+.col-lg-7{
+  @apply lg:col-span-7
+}
+.col-lg-8{
+  @apply lg:col-span-8
+}
+.col-lg-9{
+  @apply lg:col-span-9
+}
+.col-lg-10{
+  @apply lg:col-span-10
+}
+.col-lg-11{
+  @apply lg:col-span-11
+}
+.col-lg-12{
+  @apply lg:col-span-12
+}
+
+
+.col-xl-1 {
+  @apply xl:col-span-1 
+}
+.col-xl-2 {
+  @apply xl:col-span-2 
+}
+.col-xl-3 {
+  @apply xl:col-span-3 
+}
+.col-xl-4 {
+  @apply xl:col-span-4 
+}
+.col-xl-5 {
+  @apply xl:col-span-5 
+}
+.col-xl-6 {
+  @apply xl:col-span-6 
+}
+.col-xl-7 {
+  @apply xl:col-span-7 
+}
+.col-xl-8 {
+  @apply xl:col-span-8 
+}
+.col-xl-9 {
+  @apply xl:col-span-9 
+}
+.col-xl-10 {
+  @apply xl:col-span-10 
+}
+.col-xl-11 {
+  @apply xl:col-span-11 
+}
+.col-xl-12 {
+  @apply xl:col-span-12 
+}
+
+.col-2xl-1{
+  @apply 2xl:col-span-1
+}
+.col-2xl-2{
+  @apply 2xl:col-span-2
+}
+.col-2xl-3{
+  @apply 2xl:col-span-3
+}
+.col-2xl-4{
+  @apply 2xl:col-span-4
+}
+.col-2xl-5{
+  @apply 2xl:col-span-5
+}
+.col-2xl-6{
+  @apply 2xl:col-span-6
+}
+.col-2xl-7{
+  @apply 2xl:col-span-7
+}
+.col-2xl-8{
+  @apply 2xl:col-span-8
+}
+.col-2xl-9{
+  @apply 2xl:col-span-9
+}
+.col-2xl-10{
+  @apply 2xl:col-span-10
+}
+.col-2xl-11{
+  @apply 2xl:col-span-11
+}
+.col-2xl-12{
+  @apply 2xl:col-span-12
+}
+
+/* ======================== Tamaños Tipograficos ======================== */
+.text-display{
+  @apply font-bold  leading-[1.30] text-[2.25rem] sm:text-[3rem] lg:text-[3.75rem] 
+}
+.text-display-base{
+  @apply text-lg
+}
+.text-headline{
+  @apply text-3xl font-bold sm:text-4xl my-7
+}
+.text-note{
+  @apply font-semibold  text-2xl
+}
+.text-caption{
+  @apply text-lg font-bold
+}
+
+/* ======================== Componente cards ======================== */
+.grid-cards{
+  @apply grid grid-cols-[repeat(auto-fit,_minmax(min(100%,333px),_1fr))]
+}
+.cards{
+  @apply w-full h-full bg-white flex flex-col
+}
+.card-rounded{
+  @apply w-full shadow-xl shadow-slate-300 dark:shadow-slate-700 rounded-3xl overflow-hidden
+}
+
+/* ======================== Reducciòn de estilos de los Componente ======================== */
+/*===== Componente Navbar =====*/
+.nav{
+  @apply flex items-center sm:gap-10 md:gap-32 sm:pt-5 md:pt-8 px-5 justify-between
+}
+/*===== Componente Settings =====*/
+.settings{
+  @apply absolute left-4 right-4 top-24 z-20 bg-slate-200 p-6 rounded-md shadow-md dark:bg-[#0D1117] sm:left-auto
+}
+.settings__title{
+  @apply flex items-center justify-between
+}
+
+/*===== Componente SearchExercises =====*/
+.search{
+  @apply flex flex-col justify-center items-center mt-9 p-6
+}
+.search-input{
+  @apply font-bold border-2 border-gray-300 rounded w-full h-14 focus:outline-none p-3 
+}
+.search-btn{
+  @apply  w-20 lg:w-44 h-14 text-sm lg:text-xl text-white rounded absolute right-0
+}
+
+/*===== Componente BodyPart =====*/
+.body-part{
+  @apply flex flex-col items-center justify-center rounded-bl-2xl w-[270px] h-[280px] cursor-pointer gap-12
+}
+/*===== Componente Detail =====*/
+.detail{
+  @apply flex gap-16 flex-col lg:flex-row p-5 items-center
+}
+.detail__content {
+  @apply flex flex-col gap-5 lg:gap-8
+}
+.detail__icons{
+  @apply flex gap-6 items-center
+}
+.detail__icons-btn{
+  @apply bg-[#fff2db] rounded-full w-28 h-28 flex justify-center items-center
 }
